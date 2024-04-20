@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+     <div class="header-image">
+        <h1>Fight Club Arena</h1>
+        <p>Une nouvelle façon de voir le sport</p>
+        <button class="register-button" onclick="document.getElementById('registration-form').scrollIntoView();">Inscrivez-vous</button>
+    </div>
+    <style>
+
+        body, h1, h2, p, a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: black; 
+            padding-top: 30px; 
+        }
+        .navbar {
+            background-color: rgb(109, 7, 26); 
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 30px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around; 
+            z-index: 1000;
+            font-size: 0.9em;
+        }
+        .navbar a {
+            color: white;
+            padding: 0 10px;
+        }
+        .header-image {
+            background: url('file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/video.mp4') no-repeat center center/cover;
+            height: 75vh;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -30px; 
+        }
+        .header-image h1 {
+            font-size: 4em;
+            margin-bottom: 0.5em;
+        }
+        .header-image p {
+            font-size: 1.5em;
+        }
+        
+        .sports-container {
+            display: block;
+            text-align: center;
+            margin: 2em 0;
+        }
+        .full-width-sport {
+            position: relative;
+            width: 100%;
+            margin: 0;
+        }
+        .full-width-sport img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .sport-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+        }
+        .news-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin: 1.9em 0;
+        }
+        
+        .news-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 4em;
+        }
+        
+        .news-item {
+            width: 30%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 340px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .news-title-link {
+            display: block;
+            padding: 1em;
+            background-color: #fff;
+            color: #007BFF;
+            font-size: 1.5em;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sports-container {
+            display: block;
+            text-align: center;
+            margin: 2em 0;
+        }
+        .full-width-sport {
+            position: relative;
+            width: 100%;
+            margin: 0;
+        }
+        .full-width-sport img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .sport-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2em;
+            background: rgba(109, 7, 26, 0.8); 
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+    
+        .news-title-link {
+            display: block;
+            padding: 1em;
+            background-color: rgb(109, 7, 26); 
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .news-title-link:hover {
+            background-color: #007BFF; 
+        }
+        footer {
+            background-color: white; 
+            color: black;
+            text-align: center;
+            padding: 2em 0;
+            font-size: 0.8em;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: rgb(109, 7, 26);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .footer-menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .register-button {
+            background-color: rgb(109, 7, 26); 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            margin-top: 20px; 
+        }
+
+        .register-button:hover {
+            background-color: #007BFF; 
+        }
+
+        .registration-form {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align :center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group button[type="submit"] {
+            background-color: rgb(109, 7, 26); 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+
+        .form-group button[type="submit"]:hover {
+            background-color: #007BFF; 
+        }
+         body, h1, h2, p, a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: black;
+            padding-top: 30px;
+        }
+        .navbar, .sub-navbar {
+            background-color: rgb(109, 7, 26); 
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            font-size: 0.9em;
+        }
+        .navbar a, .sub-navbar a {
+            color: white;
+            padding: 0 70px;
+        }
+        .sub-navbar {
+            top: 30px; 
+            background-color: #333; 
+        }
+        .sub-navbar img {
+            width: 50px; 
+            height: 30px;
+            margin-left: 10px;
+        }
+        .header-image {
+            background: url('file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/video.mp4') no-repeat center center/cover;
+            height: 75vh;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -30px;
+        }
+        footer {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 2em 0;
+            font-size: 0.8em;
+            width: 100%;
+        }
+        .footer a {
+            color: rgb(109, 7, 26);
+            text-decoration: none;
+        }
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .footer-menu li {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+     <div class="navbar">
+        <a href="https://maps.google.com/?q=Mauléon-Licharre" target="_blank">Localisation</a>
+        <a href="mailto:yohanin@me.com">yohanin@me.com</a>
+        <a href="tel:+0772314283">+33772314283</a>
+    </div>
+     <h2 class="sports-offer-title">Ce que nous proposons</h2>
+    <div class="sports-container">
+        <div class="full-width-sport">
+            <img src="file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/kick.JPG" alt="Kickboxing">
+            <button class="sport-button" onclick="window.location.href='https://www.s-combats.com/kickboxing/';">Kickboxing</button>
+        </div>
+        <div class="full-width-sport">
+            <img src="file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/MMA.JPG.webp" alt="MMA">
+            <button class="sport-button" onclick="window.location.href='https://www.fmmaf.fr/decouvrir-mma-france/';">MMA</button>
+        </div>
+        <div class="full-width-sport">
+            <img src="file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/K1.JPG" alt="K1">
+            <button class="sport-button" onclick="window.location.href='https://www.masterfight.net/la-k1-un-art-martial-connu-mais-meconnu-en-france.html';">K1</button>
+        </div>
+    </div>
+    <head>
+    <style>
+        .sports-offer-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin: 1em 0;
+        }
+        .sports-container {
+            display: flex;
+            justify-content: center;
+            margin: 2em 0;
+        }
+        .sport {
+            flex: 0 1 calc(33.33% - 2em); 
+            margin: 1em;
+            padding: 1em; 
+            background-color: white;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.2em; 
+            color: black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+        }
+        .sport a {
+            color: #007BFF;
+            font-size: 1em;
+            cursor: pointer;
+            display: block;
+            margin-top: 0.5em; 
+        }
+        .about-section {
+            display: flex;
+            padding: 2em 0;
+            background-color: white;
+            align-items: center;
+        }
+        .about-title {
+            flex-basis: 30%;
+            font-size: 3em;
+            color: black;
+            text-align: left;
+            position: relative;
+            padding-left: 1em;
+        }
+        .about-title::after {
+            content: '';
+            position: absolute;
+            left: 35px;
+            bottom: -10px;
+            height: 5px;
+            width: 380px; 
+            background-color: red;
+        }
+        .about-description {
+            flex-basis: 70%;
+            font-size: 1em;
+            padding: 0 2em;
+            text-align: left;
+            color: grey;
+        }
+        .values {
+            display: flex; 
+            padding: 1em 2em;
+            justify-content: flex-start; 
+            list-style: none;
+        }
+        .value-item {
+            color: red;
+            margin-right: 1em; 
+            font-size: 1.5em;
+            font-weight: bold;
+            display: inline; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="https://maps.google.com/?q=Mauléon-Licharre" target="_blank">Localisation du club</a>
+        <a href="mailto:yohanin@me.com">yohanin@me.com</a>
+        <a href="tel:+0772314283">+33772314283</a>
+    </div>
+<div class="sub-navbar">
+        <img src="file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/logo.PNG" alt="Fight Club Logo">
+        <div>
+            <a href="file:///Users/yohaninthirion/Desktop/MonSite.html/pages/combattants.html">Nos combattants</a>
+            <a href="file:///Users/yohaninthirion/Desktop/MonSite.html/pages/sports.html">Autres sports</a>
+        </div>
+    </div>
+    <div class="about-section">
+        <div class="about-title">La naissance du club</div>
+        <div class="about-description">
+            Fondé en 2000 par des passionnés de sports de combat, le Fight Club Arena a toujours été à la pointe de l'innovation dans l'enseignement du Kickboxing, MMA et K1. Notre philosophie est d'inspirer et de motiver chacun à dépasser ses limites, dans un esprit d'équipe et de respect mutuel.
+            <ul class="values">
+                <li class="value-item">Discipline</li>
+                <li class="value-item">Intégrité</li>
+                <li class="value-item">Persévérance</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+    <h2 class="news-title">Les news</h2>
+
+    <div class="news-container">
+        <div class="news-item">
+            <div class="news-image" style="background-image: url(file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/bleu.JPG);"></div>
+            <a href="https://www.sport-in-place.com/blog/16091-grade-boxe-francaise/" class="news-title-link">Passage de gants bleu à Pau !! Que faut-il savoir ?</a>
+        </div>
+        <div class="news-item">
+            <div class="news-image" style="background-image: url(file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/vainqueur.JPG);"></div>
+            <a href="https://www.ffboxe.com/resultats-des-pros-francais-du-week-end-06-04-2024/" class="news-title-link">Résultats des pros Français du week-end            </a>
+        </div>
+        <div class="news-item">
+            <div class="news-image" style="background-image: url(file:///Users/yohaninthirion/Desktop/MonSite.html/photos%20/vainqueuse.JPG);"></div>
+            <a href="https://www.ffboxe.com/euro-juniors-des-filles-de-haute-lutte/" class="news-title-link">Euro juniors : des filles de haute lutte</a>
+        </div>
+    </div>
+   
+    <style>
+        body, h1, h2, p, a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: black;
+            padding-top: 30px;
+        }
+        .registration-form {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .register-form-button {
+            background-color: rgb(109, 7, 26); 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+        .register-form-button:hover {
+            background-color: #007BFF; 
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form" id="registration-form">
+        <h2>Inscription au Club</h2>
+        <button class="register-form-button" onclick="window.location='https://xr6bgdrzuqd.typeform.com/to/Zbh4tbP1';">Inscrivez-vous ici</button>
+    </div>
+</body>
+            
+    </div>
+    <footer class="footer">
+        <ul class="footer-menu">
+            <li><a href="#terms">Conditions Générales d'Utilisation</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#sitemap">Plan du site</a></li>
+            <li><a href="#privacy">Politique de confidentialité</a></li>
+        </ul>
+        <p>&copy; 2024 Fight Club Arena - Tous droits réservés</p>
+        <p><a href="mailto:yohanin@me.com">yohanin@me.com</a> | <a href="tel:+0772314283">+33772314283</a></p>
+    </footer>
+</body>
+</html>
